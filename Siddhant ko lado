@@ -11915,7 +11915,7 @@ SettingSeaEventSection.CreateDropdown(
 SettingSeaEventSection.CreateToggle(
 	{
 		Title = "Use Dragonstorm For Sea Event",
-		Desc = "Only Farm Boat and Fish and TerrorShark",
+		Desc = "Only Farm Boat and Fish and TerrorShark SeaBeast",
 		Default = Settings["Use Dragonstorm For Sea Event"] or false,
 	},
 	function(l)
@@ -11924,22 +11924,22 @@ SettingSeaEventSection.CreateToggle(
 )
 SettingSeaEventSection.CreateToggle(
 	{
-		Title = "Use Click M1 Skull Guitar For Sea Event",
+		Title = "Use Click M1 Dragonstorm Sea Event",
 		Desc = "Only Farm Boat and Seabeast",
-		Default = Settings["Use Click M1 Skull Guitar For Sea Event"] or false,
+		Default = Settings["Use Click M1 Dragonstorm For Sea Event"] or false,
 	},
 	function(l)
-		SaveSettings("Use Click M1 Skull Guitar For Sea Event", l)
+		SaveSettings("Use Click M1 Dragonstrom Sea Event", l)
 	end
 )
 SettingSeaEventSection.CreateToggle(
 	{
-		Title = "Auto Change Dragonstorm With Skull Guitar",
+		Title = "Auto Change SkullGuitar with Dragonstorm",
 		Desc = "When Kill Boat and Fish and TerrorShark use Dragonstorm\10Kill Seabeast use Seabeast",
 		Default = Settings["Auto Change Dragonstorm With Skull Guitar"] or false,
 	},
 	function(l)
-		SaveSettings("Auto Change Dragonstorm With Skull Guitar", l)
+		SaveSettings("Auto Change SkullGuitar with Dragonstorm", l)
 	end
 )
 SettingSeaEventSection.CreateToggle(
@@ -17413,7 +17413,7 @@ function GetRainBowHaki()
 				UsedualFlock()
 			until not IsMobAlive(g) or not Settings["Auto Get Rainbow Haki"]
 		else
-			A.CreateNoti({ Title = "Banana Cat Hub", Desc = "Waiting Boss Spawn", ShowTime = 5 })
+			A.CreateNoti({ Title = "Banana Cat Hub Siddhant", Desc = "Waiting Boss Spawn", ShowTime = 5 })
 			wait(5)
 		end
 	end

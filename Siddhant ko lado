@@ -13420,7 +13420,7 @@ function DestroyIDK()
 						)
 					end
 					if Settings["Use Dragonstorm For Sea Event"] and s.Name ~= "SeaBeast1" then
-						if Settings["Auto Change Skull Guitar with Dragonstorm"] then
+						if Settings["Dragonstorm"] then
 							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Dragonstorm" then
 								game:GetService("ReplicatedStorage").Remotes.CommF_
 									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Dragonstorm" }))
@@ -13432,7 +13432,7 @@ function DestroyIDK()
 							UseSkillGun()
 						end
 					elseif Settings["Use Click M1 Dragonstorm Sea Event"] then
-						if Settings["SkullGuitar with Dragonstorm"] then
+						if Settings["Dragonstorm"] then
 							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Dragonstorm" then
 								game:GetService("ReplicatedStorage").Remotes.CommF_
 									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Dragonstorm" }))
@@ -13459,7 +13459,7 @@ function DestroyIDK()
 				end
 			until not s
 				or not s.Parent
-				or not Settings["Auto Destroy IDK"]
+				or not Settings["Auto Destroy fuck"]
 				or s:FindFirstChild("Health") and s.Health.Value == 0
 				or s:FindFirstChildWhichIsA("Humanoid") and s.Humanoid.Health == 0
 			getgenv().DesIdk = false
@@ -13673,12 +13673,12 @@ function AutoAttackLeviathan()
 					end
 				end
 				if s.Name == "Leviathan" then
-					getgenv().AimPos = s.Hitbox11.CFrame
+					getgenv().AimPos = s.Hitbox20.CFrame
 					spawn(function()
 						toTarget((CFrame.new(s.HumanoidRootPart.Position.X, 140, s.HumanoidRootPart.Position.Z)))
 					end)
 				else
-					getgenv().AimPos = s.Hitbox11.CFrame
+					getgenv().AimPos = s.Hitbox20.CFrame
 					spawn(function()
 						toTarget((CFrame.new(s.HumanoidRootPart.Position.X, 142, s.HumanoidRootPart.Position.Z)))
 					end)
@@ -13689,9 +13689,9 @@ function AutoAttackLeviathan()
 					if t.Character:FindFirstChild(b) and (t.Character[b]:FindFirstChild("LeftClickRemote")) then
 						getgenv().UseFruitM1(s, true)
 					end
-				elseif Settings["Use Click M1 Skull Guitar Leviathan"] then
+				elseif Settings["Use Click M1 Skull Dragonstorm Leviathan"] then
 					equiptool(NameWeapon("Gun"))
-					SpamGunSkullGuitar(v.Hitbox11)
+					SpamGunSkullGuitar(v.Hitbox20)
 					if t:DistanceFromCharacter(v.Hitbox11.Position) < 400 then
 						UseSkillGun()
 					end
@@ -13714,12 +13714,12 @@ function AutoAttackLeviathan()
 		repeat
 			task.wait()
 			if b.Name == "Leviathan" then
-				getgenv().AimPos = b.Hitbox11.CFrame
+				getgenv().AimPos = b.Hitbox20.CFrame
 				spawn(function()
 					toTarget((CFrame.new(b.HumanoidRootPart.Position.X, 140, b.HumanoidRootPart.Position.Z)))
 				end)
 			else
-				getgenv().AimPos = b.Hitbox11.CFrame
+				getgenv().AimPos = b.Hitbox20.CFrame
 				spawn(function()
 					toTarget((CFrame.new(b.HumanoidRootPart.Position.X, 142, b.HumanoidRootPart.Position.Z)))
 				end)
@@ -13730,10 +13730,10 @@ function AutoAttackLeviathan()
 				if t.Character:FindFirstChild(X) and (t.Character[X]:FindFirstChild("LeftClickRemote")) then
 					getgenv().UseFruitM1(b, true)
 				end
-			elseif Settings["Use Click M1 Skull Guitar Leviathan"] then
+			elseif Settings["Use Click M1 Dragonstorm Leviathan"] then
 				equiptool(NameWeapon("Gun"))
-				SpamGunSkullGuitar(b.Hitbox11)
-				if t:DistanceFromCharacter(b.Hitbox11.Position) < 400 then
+				SpamGunDragonStorm(b.Hitbox11)
+				if t:DistanceFromCharacter(b.Hitbox20.Position) < 400 then
 					UseSkillGun()
 				end
 			elseif t:DistanceFromCharacter(b.Hitbox11.Position) < 400 then
@@ -13917,12 +13917,12 @@ LeviathanEventSection.CreateToggle(
 )
 LeviathanEventSection.CreateToggle(
 	{
-		Title = "Use Click M1 Skull Guitar Leviathan",
+		Title = "Use Click M1 Dragonstorm Leviathan",
 		Desc = nil,
-		Default = Settings["Use Click M1 Skull Guitar Leviathan"] or false,
+		Default = Settings["Use Click M1 Dragonstrom Leviathan"] or false,
 	},
 	function(b)
-		SaveSettings("Use Click M1 Skull Guitar Leviathan", b)
+		SaveSettings("Use Click M1 Dragonstrom Leviathan", b)
 	end
 )
 local b = LeviathanEventSection.CreateDropdown(
@@ -13998,7 +13998,7 @@ function ShootHeartLeviathan()
 				toTarget(b.Harpoon.Seat.CFrame)
 			end
 		else
-			A.CreateNoti({ Title = "Banana Cat Hub", Desc = "Successfully Fire Shoot Heart Leviathan", ShowTime = 5 })
+			A.CreateNoti({ Title = "Banana Cat Hub Siddhant", Desc = "Successfully Fire Shoot Heart Leviathan", ShowTime = 5 })
 			wait(5)
 		end
 	end

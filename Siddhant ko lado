@@ -142,7 +142,7 @@ end
 
 Settings = {}
 HttpService = game:GetService("HttpService")
-FolderName = "Banana Cat Hub"
+FolderName = "Banana Cat Hub Siddhant"
 SaveFileNameGame = "-BloxFruitBNNC.json"
 SaveFileName = game.Players.LocalPlayer.Name .. SaveFileNameGame
 function SaveSettings(b, t, A)
@@ -12669,7 +12669,7 @@ function AutoSeabeast()
 							UseSkillGun()
 						end
 					elseif Settings["Use Click M1 Skull Guitar For Sea Event"] then
-						if Settings["Auto Change Dragonstorm With Skull Guitar"] then
+						if Settings["Auto Change Skull Guitar with Dragonstrom"] then
 							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Skull Guitar" then
 								game:GetService("ReplicatedStorage").Remotes.CommF_
 									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Skull Guitar" }))
@@ -12992,7 +12992,7 @@ function AutoSpawnKitsune()
 		end
 	else
 		if (P.VehicleSeat.Position - H.Position).Magnitude > 200 then
-			manageTween(P.VehicleSeat, H, 350, "TweenBoat")
+			manageTween(P.VehicleSeat, H, 450, "TweenBoat")
 		end
 		toTarget(H * CFrame.new(0, 2000, 0))
 	end
@@ -13386,7 +13386,7 @@ function DestroyIDK()
 				end)
 				if s:FindFirstChildWhichIsA("Humanoid") then
 					if Settings["Use Dragonstorm For Sea Event"] then
-						if Settings["Auto Change Dragonstorm With Skull Guitar"] then
+						if Settings["Auto Change Skull Guitar with Dragonstorm"] then
 							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Dragonstorm" then
 								game:GetService("ReplicatedStorage").Remotes.CommF_
 									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Dragonstorm" }))
@@ -13420,7 +13420,7 @@ function DestroyIDK()
 						)
 					end
 					if Settings["Use Dragonstorm For Sea Event"] and s.Name ~= "SeaBeast1" then
-						if Settings["Auto Change Dragonstorm With Skull Guitar"] then
+						if Settings["Auto Change Skull Guitar with Dragonstorm"] then
 							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Dragonstorm" then
 								game:GetService("ReplicatedStorage").Remotes.CommF_
 									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Dragonstorm" }))
@@ -13431,15 +13431,15 @@ function DestroyIDK()
 						if t:DistanceFromCharacter(g.Position) < 400 then
 							UseSkillGun()
 						end
-					elseif Settings["Use Click M1 Skull Guitar For Sea Event"] then
-						if Settings["Auto Change Dragonstorm With Skull Guitar"] then
-							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Skull Guitar" then
+					elseif Settings["Use Click M1 Dragonstorm Sea Event"] then
+						if Settings["SkullGuitar with Dragonstorm"] then
+							if not NameWeapon("Gun") or NameWeapon("Gun") ~= "Dragonstorm" then
 								game:GetService("ReplicatedStorage").Remotes.CommF_
-									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Skull Guitar" }))
+									:InvokeServer(unpack({ [1] = "LoadItem", [2] = "Dragonstorm" }))
 							end
 						end
 						equiptool(NameWeapon("Gun"))
-						SpamGunSkullGuitar(g)
+						SpamGunDragonStorm(g)
 						if t:DistanceFromCharacter(g.Position) < 400 then
 							UseSkillGun()
 						end
